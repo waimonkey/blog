@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>hjj</title>
+</head>
+
+<body>
+  <video id="video" autoplay="" style="width: 640px; height: 480px; border: 1px solid #000;"></video>
+  <button id="picture">pic</button>
+  <canvas id="canvas" width="640" height="480" style="border: 1px solid #000;"></canvas>
+  <script>
+    var video = document.getElementById('video');
+    var context = canvas.getContext('2d');
+    var errocb = function () {
+        console.log('sth wrong');
+      }
+      //利用h5 的 api navigator.getUserMedia来开启摄像头,浏览器上回出现图示中的提示
+    if (navigator.getUserMedia) {
+      //标准的API
+      nnavigator.getUserMedia({
+        "video": true
+      }, function (stream) {
+        video.src = stream;
+        video.play();
+
+      }, errocb);
+    } else if (navigator.webkitGetUserMedia) {
+      //webkit 核心的API
+      navigator.webkitGetUserMedia({
+        "video": true
+      }, function (stream) {
+        video.src = window.webkitURL.createObjectURL(stream);
+        video.play();
+      }, errocb)
+    }
+    document.getElementById("picture").addEventListener("click", function () {
+      console.log('123')
+      context.drawImage(video, 0, 0, 640, 480);
+    });
+  </script>
+</body>
+
+</html>
