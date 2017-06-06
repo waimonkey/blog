@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <object type="image/svg+xml" data="无设备.svg" id="pp">
+  <p>hello</p>
+  </object>
+  <script>
+    var object = document.getElementById('pp')
+    object.onload = function () {
+      var svgdoc;
+      try {
+        svgdoc = object.contentDocument;
+        console.log(svgdoc)
+      } catch (e) {
+        try {
+          svgdoc = object.getSVGDocument();
+           console.log(svgdoc)
+        } catch (e) {
+          console.log(e);
+        }
+      }
+      console.log(svgdoc)
+    }
+  </script>
+</body>
+
+</html>

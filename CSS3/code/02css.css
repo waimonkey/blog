@@ -1,0 +1,35 @@
+ .border_radius {
+   border: 2px solid;
+   font-size: 14px;
+   color: #ffffff;
+   font-weight: bold;
+   padding: 10px;
+   background: #6AAFCF;
+   border-radius: 5px;
+   -webkit-transform: 1s;
+   -ms-transform: 1s;
+   transform: 1s;
+   -webkit-transition: ;
+   -o-transition: ;
+   transition: ;
+   display: -webkit-box;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: flex;
+ }
+ 
+ .newspaper {
+   column-count: 3;
+   -moz-column-count: 3;
+   /* Firefox */
+   -webkit-column-count: 3;
+   /* Safari and Chrome */
+   column-gap: 40px;
+   -moz-column-gap: 40px;
+   /* Firefox */
+   -webkit-column-gap: 40px;
+   /* Safari and Chrome */
+   -webkit-column-rule: 20px inset #ff00ff;
+   -moz-column-rule: 20px inset #ff00ff;
+   column-rule: 20px inset #ff00ff;
+ }

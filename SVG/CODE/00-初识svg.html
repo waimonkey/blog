@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <style>
+    #in1 {
+      position: absolute;
+      top: 300px;
+      left: 300px;
+      color: #fff;
+    }
+     #in1 input {
+      width: 40px;
+      height: 30px;
+      margin: 0 5px;
+      padding: 0 5px;
+     }
+     #po {
+      transform: translateX(300)translateY(250);
+     }
+
+  </style>
 </head>
+
 <body>
-  <!-- <h1>My first SVG</h1>
- 
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <circle cx="100" cy="50" r="40" stroke="black"
-  stroke-width="2" fill="red" />
-</svg> -->
-<embed src="无设备.svg" type="image/svg+xml" />
+  <!-- </body><svg xmlns="http://www.w3.org/2000/svg" version="1.1"  width="1600px" height="900px" viewBox="0 0 1366 768" enable-background="new 0 0 1366 768" xml:space="preserve" >
+     <g transform="matrix(1,0,0,1,200,100)">
+      <text x="10" y="18" fill="">1#雨水泵当月累计运行时间</text>
+      <rect width="50" height="30" x="205" y="0" style="stroke-width:1;stroke: black; fill-opacity:0;"></rect>
+      <text x="210" y="18" fill="">0.00</text>
+      <text x="260" y="18" fill="">h</text>
+    </g>
+  </svg> -->
+  <!-- <div id="in1">
+    <span>1#雨水泵当月累计运行时间</span><input type="text" value="0.00"><span>h</span>
+  </div> -->
+  <!-- <embed src="无设备.svg" type="image/svg+xml" /> -->
+  <object type="image/svg+xml" data="13.svg" id="po">
+  </object>
+<script>
+  var fon = document.getElementById('po').getSVGDocument()
+  console.log(fon)
+</script>
 </body>
+
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <input type="checkbox" value="quan" id="all">
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <input type="checkbox" value="dan" class="da">
+        </td>
+        <td>
+          <input type="checkbox" value="dan" class="da">
+        </td>
+        <td>
+          <input type="checkbox" value="dan" class="da">
+        </td>
+        <td>
+          <input type="checkbox" value="dan" class="da">
+        </td>
+       
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    var all = document.getElementById('all')
+    all.onchange = function () {
+      selectAll('da')
+    }
+    function selectAll(name) {
+      var flag = all.checked;
+      var dans = document.getElementsByClassName(name)
+      if (flag === true) {
+        for (var i = 0; i < dans.length; i++) {
+          dans[i].checked = true;
+        }
+      } else {
+        for (var i = 0; i < dans.length; i++) {
+          dans[i].checked = false;
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
