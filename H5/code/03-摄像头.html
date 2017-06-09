@@ -31,8 +31,7 @@
                 video.src = window.webkitURL.createObjectURL(stream);//同上
                 video.play();//同上
             }, errBack);
-        }
-        else if(navigator.mozGetUserMedia) { //moz内核调用html5拍摄接口
+        }else if(navigator.mozGetUserMedia) { //moz内核调用html5拍摄接口
             navigator.mozGetUserMedia(videoObj, function(stream){
                 video.src = window.URL.createObjectURL(stream);//同上
                 video.play();//同上
@@ -44,7 +43,7 @@
             .addEventListener("click", function() {//获取拍照按钮绑定事件
                 var canvans = document.getElementById("canvas"),//调用canvas接口
                         context = canvas.getContext("2d");
-                context.drawImage(video, 0, 0, 640, 480);//调用canvas接口的drawImage方法绘制当前video标签中的静态图片，其实就是截图
+                context.drawImage(video, 0, 0, 320, 240);//调用canvas接口的drawImage方法绘制当前video标签中的静态图片，其实就是截图
 
                 var imgData = canvans.toDataURL();//获取图片的base64格式的数据
                 //这里就可以写上传服务器代码了
