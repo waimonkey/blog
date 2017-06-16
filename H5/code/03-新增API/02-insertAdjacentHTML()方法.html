@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<p id="ob">这是p元素</p>
+
+  <script>
+    /*
+    
+    插入标记的最后一个新增方式是insertAdjacentHTML()方法,他接受两个参数:插入文职和要插入的HTML文本,第一个参数必须是下列值之一
+    beforebegin 在当前元素之前插入一个紧邻的同辈元素
+    afterbegin 在当前元素之前插入一个新的子元素或者在第一个子元素之前在插入一个新的子元素
+    beforeend 在当前元素之下插入一个新的子元素或者在最后一个子元素之后再插入新的子元素
+    afterend 在当前元素之后插入一个紧邻的同辈元素
+
+    注意 这些值都不洗是小写形式,第二个参数是一个 HTML 字符串 (与 innerHTML 和 outerHTML 的值相同) 如果浏览器无法解析该字符串,就会跑出错误,一下这个方法的基本用法示例
+     */
+    var p = document.getElementById('ob')
+    //作为前一个同辈元素插入
+    p.insertAdjacentHTML('beforebegin','<p>hello world</p>')
+    //作为第一个子元素插入
+    p.insertAdjacentHTML('afterbegin','<p>enen</p>')
+    //作为最后一个子元素插入
+    p.insertAdjacentHTML("beforeend","<p>nihao</p>")
+    //作为后一个同辈元素插入
+    p.insertAdjacentHTML("afterend",'<p>nnn</p>')
+  </script>
+</body>
+</html>

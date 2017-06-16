@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>outerHTML 属性</title>
+</head>
+<body>
+  <div id="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio non quam blanditiis, modi commodi excepturi impedit laudantium consequatur tempora dolorem obcaecati quasi, sunt dolorum magni nisi possimus fuga! Non, dolores!</p>
+    <ul>
+      <li>item a</li>
+      <li>item b</li>
+      <li>item c</li>
+      <li>item d</li>
+    </ul>
+  </div>
+  <script>
+    var oBox = document.getElementById('content')
+    //在读模式先,返回到额是和innerHTML 类似,只不过包含了 div 本身
+    console.log(oBox.outerHTML)
+    console.log(oBox.innerHTML)
+    // 使用 outerHTML 属性一线面这种方式设置值
+    // oBox.outerHTML = "<p>this is a paregraph</p>"
+
+    //这段代码 完成的操作 与下面这些 DOM 脚本代码一样
+    
+    var  p = document.createElement("p")
+    p.appendChild(document.createTextNode("this is a p"))
+    oBox.parentNode.replaceChild(p,oBox)
+  </script>
+
+</body>
+</html>
