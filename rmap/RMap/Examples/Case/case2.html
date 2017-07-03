@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>案例2</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="http://192.168.200.100:8020/RunMapAPI/develop/RMap/RMap.js"></script>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+				height: 100%;
+			}
+			
+			.map {
+				position: absolute;
+				height: 100%;
+				right: 0;
+				left: 0;
+			}
+			
+			.menuBar {
+				position: relative;
+				top: 10px;
+				left: 50px;
+				width: 800px;
+				z-index: 9999;
+			}
+			p {
+				position: relative;
+				left: 50px;
+				width: 800px;
+				z-index: 9999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="map" class="map"></div>
+		<div class="menuBar">
+			<input type="button" value="添加点" onclick="addPointList()" />
+		</div>
+		<p>
+			后台返回JSON数据，该数据为一组待经纬度的点数据，在地图上添加该组点，根据不同属性显示不同图标，并点在点击时弹出气泡窗口，气泡窗口显示该点位的属性值。<br>
+			该示例用到接口：pointList、showPopWindow
+		</p>
+	</body>
+	<script>
+		//初始化地图
+		var rmap = new RMap.Map('map');
+
+		//添加多点，自定义图片
+		function addPointList() {
+			var jsonPoints='[{"lng":116.315751,"lat":39.893688,"name":"北京西站","isOnLine":0},{"lng":116.372635,"lat":39.863035,"name":"北京南站","isOnLine":1},{"lng":116.421389,"lat":39.901236,"name":"北京站","isOnLine":1},{"lng":116.346917,"lat":39.943920,"name":"北京北站","isOnLine":1},{"lng":116.478885,"lat":39.899780,"name":"北京东站","isOnLine":1}]';
+			var picUrl1 = "Images/station.png"; //自定义图片地址
+			var picUrl0 = "Images/station.png"; //自定义图片地址
+			rmap.addPointList(jsonPoints, {
+				id:'1234',
+				pic:picUrl0,
+				isCenter:true,
+				attrPic:[{"field":"isOnLine","value":1,"pic":picUrl1},{"field":"isOnLine","value":0,"pic":picUrl0}],
+				onClick: onPointClick
+			}); 
+			
+//			rmap.centerZoom(116.387725, 39.899643, 12); //地图定位
+		};
+		//点位鼠标点击回调方法
+		function onPointClick(e) {
+			var userDiv = document.createElement('div');
+			userDiv.innerHTML = "名称：" + e.data.name;
+			userDiv.innerHTML += "<br>经度：" + e.lng;
+			userDiv.innerHTML += "<br>纬度：" + e.lat;
+			userDiv.innerHTML += "<br><div style='text-align: right;'><a href='http://127.0.0.1:8020/RunMapAPI/develop/Examples/helloWorld.html'  target='_blank'>详细信息</a></div>";
+			
+			rmap.showPopWindow(e.lng, e.lat, userDiv, {
+				autoPan:false//显示气泡时是否确保当前气泡在地图范围，默认为true
+			});
+		}
+		//移除所有点
+		function removeAll() {
+			rmap.removePoint();
+		};
+	</script>
+
+</html>

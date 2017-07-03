@@ -1,0 +1,327 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Calibri","sans-serif";}
+h1
+	{mso-style-link:"标题 1 Char";
+	margin-top:17.0pt;
+	margin-right:0cm;
+	margin-bottom:16.5pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:240%;
+	page-break-after:avoid;
+	font-size:22.0pt;
+	font-family:"Calibri","sans-serif";}
+h2
+	{mso-style-link:"标题 2 Char";
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:173%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light","sans-serif";}
+h3
+	{mso-style-link:"标题 3 Char";
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:173%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"页眉 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	layout-grid-mode:char;
+	border:none;
+	padding:0cm;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"页脚 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";}
+span.Char
+	{mso-style-name:"页眉 Char";
+	mso-style-link:页眉;}
+span.Char0
+	{mso-style-name:"页脚 Char";
+	mso-style-link:页脚;}
+span.1Char
+	{mso-style-name:"标题 1 Char";
+	mso-style-link:"标题 1";
+	font-weight:bold;}
+span.2Char
+	{mso-style-name:"标题 2 Char";
+	mso-style-link:"标题 2";
+	font-family:"Calibri Light","sans-serif";
+	font-weight:bold;}
+span.3Char
+	{mso-style-name:"标题 3 Char";
+	mso-style-link:"标题 3";
+	font-weight:bold;}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<h2><span style='font-family:宋体'>坐标拾取</span></h2>
+
+<h3><span lang=EN-US>getCoordinate(callback, option)</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体'>鼠标移动时，获取坐标数据</span></p>
+
+<table class=MsoTable15List6ColorfulAccent6 border=1 cellspacing=0
+ cellpadding=0 style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=157 colspan=2 valign=top style='width:118.1pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>参数</span></b></p>
+  </td>
+  <td width=107 colspan=3 valign=top style='width:80.35pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>类型</span></b></p>
+  </td>
+  <td width=304 valign=top style='width:227.65pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>描述</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 colspan=3 valign=top style='width:118.85pt;border:none;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>callback</span></b></p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Function</span></p>
+  </td>
+  <td width=306 colspan=2 valign=top style='width:229.25pt;border:none;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>拾取完成后的回调函数，详细参数见回调参数表</span></p>
+  <p class=MsoNormal><span style='font-family:宋体'>示例：</span><span lang=EN-US>function(event)
+  {…}</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=157 colspan=2 valign=top style='width:118.1pt;border:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>option</span></b></p>
+  </td>
+  <td width=107 colspan=3 valign=top style='width:80.35pt;border:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>可选</span></p>
+  </td>
+  <td width=304 valign=top style='width:227.65pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.55pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=113 valign=top style='width:84.55pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>showTime</span></p>
+  </td>
+  <td width=107 colspan=3 valign=top style='width:80.35pt;border:none;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Number</span></p>
+  </td>
+  <td width=304 valign=top style='width:227.65pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>绘制点显示时间，单位为毫秒，设为</span><span
+  lang=EN-US>-1</span><span style='font-family:宋体'>一直显示</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.55pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=113 valign=top style='width:84.55pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>repeatMode</span></p>
+  </td>
+  <td width=107 colspan=3 valign=top style='width:80.35pt;border:none;
+  border-bottom:solid #70AD47 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Boolean</span></p>
+  </td>
+  <td width=304 valign=top style='width:227.65pt;border:none;border-bottom:
+  solid #70AD47 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>是否重复获取，默认是</span><span
+  lang=EN-US>true</span></p>
+  </td>
+ </tr>
+ <tr height=0>
+  <td width=45 style='border:none'></td>
+  <td width=113 style='border:none'></td>
+  <td width=1 style='border:none'></td>
+  <td width=104 style='border:none'></td>
+  <td width=2 style='border:none'></td>
+  <td width=304 style='border:none'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:12.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>回调事件参数</span></p>
+
+<table class=MsoTable15List6ColorfulAccent6 border=1 cellspacing=0
+ cellpadding=0 style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=158 colspan=2 valign=top style='width:118.55pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>参数</span></b></p>
+  </td>
+  <td width=105 valign=top style='width:78.9pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>类型</span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.65pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>描述</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 colspan=2 valign=top style='width:118.55pt;border:none;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>event</span></b></p>
+  </td>
+  <td width=105 valign=top style='width:78.9pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>可选</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.65pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.65pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=113 valign=top style='width:84.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>lng</span></p>
+  </td>
+  <td width=105 valign=top style='width:78.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Number</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.65pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>经度</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.65pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=113 valign=top style='width:84.9pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>lat</span></p>
+  </td>
+  <td width=105 valign=top style='width:78.9pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Number</span></p>
+  </td>
+  <td width=305 valign=top style='width:228.65pt;border:none;border-bottom:
+  solid #70AD47 1.0pt;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>纬度</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h2><span style='font-family:宋体'>停止坐标拾取</span></h2>
+
+<h3 style='margin-left:651.0pt;text-indent:-651.0pt'><span lang=EN-US>stopGetCoordinate()</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体'>停止坐标拾取</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h2><span style='font-family:宋体'>获取当前地图范围</span></h2>
+
+<h3><span lang=EN-US>getMapExtent()</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体'>直接获取当前地图范围</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h2><span style='font-family:宋体'>获取当前地图等级</span></h2>
+
+<h3><span lang=EN-US>getMapLevel()</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体'>直接获取当前地图等级</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

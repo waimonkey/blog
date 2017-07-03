@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HelloWorld</title>
+		<meta charset="utf-8" />
+		<script src="http://192.168.200.100:8020/RunMapAPI/develop/RMap/RMap.js"></script>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+			}
+			html,body,#map {
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="map" class="map"></div>
+		</div>
+	</body>
+	<script>
+		//初始化地图，默认地图为在线高德地图
+		var rmap = new RMap.Map('map');
+		//以116.390985, 39.906358（天安门广场）为中心点坐标，地图缩放到12级
+		rmap.centerZoom(116.390985, 39.906358, 12);
+	</script>
+</html>

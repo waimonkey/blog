@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>清控人居-智慧水务</title>
+  <!-- Global stylesheets -->
+  <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/QKRJ.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="assets/js/CodeMirror/lib/codemirror.css">
+  <link rel="stylesheet" type="text/css" href="assets/js/CodeMirror/theme/3024-night.css">
+  <link rel="stylesheet" type="text/css" href="assets/js/CodeMirror/theme/erlang-dark.css">
+  <!-- /global stylesheets -->
+  <!-- Core JS files -->
+  <script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+  <!-- /core JS files -->
+  <!-- Theme JS files -->
+  <script type="text/javascript" src="assets/js/plugins/ui/nicescroll.min.js"></script>
+  <script type="text/javascript" src="assets/js/pages/layout_fixed_custom.js"></script>
+  <!-- /theme JS files -->
+  <script src="assets/js/CodeMirror/lib/codemirror.js"></script>
+  <script src="assets/js/CodeMirror/mode/htmlmixed/htmlmixed.js"></script>
+  <!-- interface -->
+  <script src="./assets/js/artTemplate/dist/template.js"></script>
+  <script src="./port/config_ApplicationCase.js"></script>
+  <script type="text/javascript" src="assets/js/core/app.js"></script>
+</head>
+
+<body>
+  <!-- 主导航 -->
+  <!-- /主导航 -->
+  <!-- 内容 -->
+  <div class="page-container">
+    <!-- Page content -->
+    <div class="page-content">
+      <!-- Main content -->
+      <div class="content-wrapper no-padding-bottom">
+        <!-- Content area -->
+        <div id="qk-map-data" class="content qkrj_map_bg position-relative">
+          <div class="row">
+            <div class="col-xs-2 ">
+              <div class="panel panel-primary position-relative mt-10">
+                <div class="panel-heading  no-border exam" onload="this.height=this.contentWindow.document.documentElement.scrollHeight">
+                  <h6>智水地图</h6>
+                </div>
+                <div class="panel-body p-15 exli">
+                  <ul id="navbar">
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-10">
+              <!--  <iframe name="sidframe" style="height:900px; width: 100%;" src="ex1.html" frameborder="0" scrolling="no" onload="this.height=this.contentWindow.document.documentElement.scrollHeight" >
+             </iframe> -->
+              <div class="page-container">
+                <!-- Page content -->
+                <div class="page-content">
+                  <!-- Main content -->
+                  <div class="content-wrapper no-padding-bottom">
+                    <!-- Content area -->
+                    <div id="qk-map-data" class="content qkrj_map_bg position-relative">
+                      <div class="row" style="height: 100%; width: 100%; ">
+                        <div class="col-xs-5">
+                          <div id="code_area" unselectable="on" style="width: 100%; ">
+                            <div id="openbar" unselectable="on" style="padding-left: 10px;">
+                              <div id="d_menu">
+                                <div id="d_run_container"><a href="javascript:void(0);" id="d_run_button" onClick="run();" class="run">运行</a></div>
+                              </div>
+                              <p>源代码编辑器</p>
+                            </div>
+                            <textarea id="myresource" class="clearfix" style="width: 100%;height: 100%">
+                            </textarea>
+                            <div id="code_close"></div>
+                          </div>
+                        </div>
+                        <div class="col-xs-7">
+                          <div id="mapContent" class="clearfix">
+                            <div id="code_open"></div>
+                            <div id="overiframe" style=" background:url(about:_blank);" unselectable="on"></div>
+                            <iframe class="" unselectable="on" name="container" id="container" src="" style="width: 100%; height: 900px;"></iframe>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /content area -->
+                    </div>
+                    <!-- /main content -->
+                  </div>
+                  <!-- /page content -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /content area -->
+        </div>
+        <!-- /main content -->
+      </div>
+      <!-- /page content -->
+    </div>
+    <!-- /内容 -->
+    <script id="arttp" type="text/html">
+      {{each AppList as list i}}
+      <li><a href="javascript:;" target="sidframe" id="case{{i+1}}" class="examp">{{list.label}}</a>
+        <p>{{list.describe}}</p>
+      </li>
+      {{/each}}
+    </script>
+    <script>
+      window.onresize = function () {
+        var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        document.getElementById("qk-map-data").style.height = h - 46 + "px";
+        $("#code_area").css("height",(h-46)+"px")
+
+      }
+      var AppData = {
+        AppList: ApplicationCase
+      }
+      var html = template('arttp', AppData);
+      document.getElementById('navbar').innerHTML = html;
+
+
+      $(".examp").each(function (index, item) {
+        $(item).on("click", function () {
+          // console.log($(this))
+          $.ajax({
+            async: false,
+            url: "./RMap/Examples/Case/case" + (index + 1) + ".html",
+            success: function (data) {
+              $("#myresource").text(data)
+              run();
+            },
+            error: function (err) {
+              console.log(err)
+            }
+          });
+        })
+      })
+      $(document).ready(function () {
+        $.ajax({
+          async: false,
+          url: "./RMap/Examples/Case/case1.html",
+          success: function (data) {
+            $("#myresource").text(data);
+            run();
+          },
+          error: function (err) {
+            console.log(err)
+          }
+        });
+      })
+    </script>
+</body>
+
+</html>

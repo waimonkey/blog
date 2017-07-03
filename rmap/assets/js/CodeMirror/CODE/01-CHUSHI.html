@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="../lib/codemirror.css">
+  <link rel="stylesheet" href="../theme/paraiso-dark.css">
+
+  <script src="../lib/codemirror.js"></script>
+  <script src="../mode/clike/clike.js"></script>
+  <script src="../mode/javascript/javascript.js"></script>
+  <script src="../keymap/sublime.js"></script>
+</head>
+<body>
+  <textarea name="" id="code" cols="30" rows="10"></textarea>
+  <script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"),{
+      lineNumbers:true,
+      mode: "htmlmixed"
+    })
+  </script>
+</body>
+</html>

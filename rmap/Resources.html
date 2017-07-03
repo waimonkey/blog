@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>清控人居-智慧水务</title>
+  <!-- Global stylesheets -->
+  <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/QKRJ.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+  <!-- /global stylesheets -->
+  <!-- Core JS files -->
+  <script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+  <!-- /core JS files -->
+  <!-- Theme JS files -->
+  <script type="text/javascript" src="assets/js/plugins/ui/nicescroll.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/app.js"></script>
+  <script type="text/javascript" src="assets/js/pages/layout_fixed_custom.js"></script>
+  <!-- /theme JS files -->
+  <script src="./port/config_ResourceList.js"></script>
+  <script src="./assets/js/artTemplate/dist/template.js"></script>
+</head>
+
+<body>
+  <!-- 内容 -->
+  <div class="page-container" >
+    <!-- Page content -->
+    <div class="page-content">
+      <!-- Main content -->
+      <div class="content-wrapper no-padding-bottom" >
+        <!-- Content area -->
+        <div id="qk-map-data" class="content qkrj_map_bg position-relative" style="overflow:auto; " >
+          <h2 class="mt">地图资源</h2>
+          <div class="row" style="height: 100%;" >
+            <div class="col-xs-5" style="height:100%; overflow: auto;">
+              <div class="row">
+                <div class="panel panel-white ">
+                  <div class="panel-heading">
+                    <h6 class="panel-title qkrj_yq_lc_s">地图底图</h6>
+                  </div>
+                  <div class="panel-body" id="resources">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="panel panel-white ">
+                  <div class="panel-heading">
+                    <h6 class="panel-title qkrj_yq_lc_s">地图图层</h6>
+                  </div>
+                  <div class="panel-body" id="thematicLayer">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7" style="position: fixed; top: 50px; right: 0;">
+              <iframe name="map" style="height: 800px; width: 90%;" src="./rmap.html" frameborder="0" scrolling="no" id="iframepage" >
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <!-- /content area -->
+      </div>
+      <!-- /main content -->
+    </div>
+    <!-- /page content -->
+  </div>
+  <!-- /内容 -->
+  <script id="temp" type="text/html">
+    {{each list as value i}}
+    <ul class="no-list-style pl-20 pb-20 pt-20 no-padding no-margin qkrj_shpg_list border-bottom" style="border-color: #ccc; ">
+      <li>名称:<span>{{value.name_CN}}</span></li>
+      <li>编码: <span>{{value.name}}</span></li>
+      <li>描述: <span>{{value.describe}}</span></li>
+      <li><a href="./rmap.html?name={{value.name}}&type=baseLayer" target="map">查看地图</a></li>
+    </ul>
+    {{/each}}
+  </script>
+  <script type="text/html" id="late">
+    {{each dats as value i}}
+    <ul class="no-list-style pl-20 pt-20 no-padding no-margin qkrj_shpg_list border-bottom" style="border-color: #ccc;">
+      <li>名称:<span>{{value.layerName_CN}}</span></li>
+      <li>编码: <span>{{value.layerName}}</span></li>
+      <li>描述: <span>{{value.describe}}</span></li>
+      {{ if value.isQueryLayer == true}}
+      <li>是否可查询: <span>是</span></li>
+      <li class="pb-10">字段:
+        <table class="table qkrj_table tabponsive table-xxs  table-hover table-bordered text-center " style="width: 70%; height: 70%;">
+          <tbody>
+            <tr>
+              <td>name</td>
+              <td>string</td>
+              <td>名称</td>
+            </tr>
+            {{each value.fieldList as item i}}
+            <tr>
+              <td>{{item.fieldName}}</td>
+              <td>{{item.fieldType}}</td>
+              <td>{{item.fieldDescribe}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </li>
+      {{/if}}
+       {{ if value.isQueryLayer == false}}
+            <li>是否可查询: <span>否</span></li>
+            {{/if}}
+      <li><a href="./rmap.html?name={{value.layerName}}&type=thematicLayer" target="map">查看数据</a></li>
+    </ul>
+    {{/each}}
+  </script>
+  <script>
+    var data = {
+      list: InterfaceDetails.baseLayer
+    }
+    var dat = {
+      dats: InterfaceDetails.thematicLayer
+    }
+    var htmla = template('temp', data);
+    document.getElementById('resources').innerHTML = htmla;
+    var htmlb = template('late', dat);
+    document.getElementById('thematicLayer').innerHTML = htmlb;
+
+
+
+    window.onresize = function () {
+      var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      // document.getElementById("qk-map-data").style.height = h - 46 + "px";
+
+    }
+
+
+   
+  </script>
+</body>
+
+</html>

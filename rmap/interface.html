@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>清控人居-智慧水务</title>
+  <!-- Global stylesheets -->
+  <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/QKRJ.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+  <!-- /global stylesheets -->
+  <!-- Core JS files -->
+  <script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+  <!-- /core JS files -->
+  <!-- Theme JS files -->
+  <script type="text/javascript" src="assets/js/plugins/ui/nicescroll.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/app.js"></script>
+  <script type="text/javascript" src="assets/js/pages/layout_fixed_custom.js"></script>
+  <script src="port/config_InterfaceDetails.js"></script>
+  <!-- /theme JS files -->
+  <!-- interface -->
+  <script src="./port/config_InterfaceDetails.js"></script>
+  <script src="./assets/js/artTemplate/dist/template.js"></script>
+</head>
+
+<body>
+  <!-- 内容 -->
+  <div class="page-container">
+    <!-- Page content -->
+    <div class="page-content">
+      <!-- Main content -->
+      <div class="content-wrapper no-padding-bottom">
+        <!-- Content area -->
+        <div id="qk-map-data" class="content qkrj_map_bg position-relative">
+          <div class="row">
+            <div class="col-md-6  por" id="tabchange">
+              <ul id="tabchange">
+                <li><a href="#" id="inter">接口说明</a></li>
+                <li><a href="#" id="ex">调用示例</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row" id="ifra" >
+            <div class="tabcontent" id="contenta" style=" height: 100%;">
+            </div>
+            <div class="tabcontent" id="contentb" style="display: none; height: 100%;">
+              <div class="page-container">
+                <!-- Page content -->
+                <div class="page-content">
+                  <!-- Main content -->
+                  <div class="content-wrapper no-padding-bottom">
+                    <!-- Content area -->
+                    <div id="qk-map-data" class="content qkrj_map_bg position-relative">
+                      <div class="row" style="height: 100%; width: 100%">
+                        <div class="col-xs-5">
+                          <div id="code_area" unselectable="on" style="width: 100%; ">
+                            <div id="openbar" unselectable="on" style="padding-left: 10px;">
+                              <div id="d_menu">
+                                <div id="d_run_container"><a href="javascript:void(0);" id="d_run_button" onClick="run();"  class="run">运行</a></div>
+                              </div>
+                              <p>源代码编辑器</p>
+                            </div>
+                            <textarea id="myresource" class="clearfix" style="width: 100%;height: 100%">
+                            </textarea>
+                            <div id="code_close"></div>
+                          </div>
+                        </div>
+                        <div class="col-xs-7">
+                          <div id="mapContent" class="clearfix">
+                            <div id="code_open"></div>
+                            <div id="overiframe" style=" background:url(about:_blank);" unselectable="on"></div>
+                            <iframe class="" unselectable="on" name="container" id="container"  frameborder="0" scrolling="no" src="" style="width: 100%; height: 800px;"></iframe>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /content area -->
+                    </div>
+                    <!-- /main content -->
+                  </div>
+                  <!-- /page content -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /content area -->
+      </div>
+      <!-- /main content -->
+    </div>
+    <!-- /page content -->
+  </div>
+  <!-- /内容 -->
+  <script>
+    $(document).ready(function () {
+      $('#tabchange li').click(function () {
+        var index = $(this).index();
+        $(this).attr('class', "tabhover").siblings('li').attr('class', 'taba');
+        $('.tabcontent').eq(index).show().siblings('.tabcontent').hide();
+      })
+    })
+  </script>
+  <script>
+    window.onresize = function () {
+      var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      document.getElementById("qk-map-data").style.height = h - 46 + "px";
+      $("#code_area").css("height",(h-100)+"px")
+    }
+
+    function GetRequest() {
+      var url = location.search; //获取url中"?"符后的字串  
+      var theRequest = new Object();
+      if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("&");
+        for (var i = 0; i < strs.length; i++) {
+          theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+        }
+      }
+      return theRequest;
+    }
+    var obj = GetRequest()
+    
+    $(document).ready(function () {
+      $.ajax({
+        async: false,
+        url: "./RMap/Interface/" + obj.child + ".htm",
+        success: function (data) {
+          $("#contenta").html(data)
+        },
+        error: function (err) {
+          console.log(err)
+        }
+      });
+    })
+
+    $("#ex").on("click", function () {
+      $.ajax({
+        async: false,
+        url: "./RMap/Examples/" + obj.child + ".html",
+        success: function (data) {
+          $("#myresource").text(data)
+          run();
+        },
+        error: function (err) {
+          console.log(err)
+        }
+      });
+    })
+
+    // $("#container").attr("src","./RMap/Examples/" + obj.child + ".html")
+  </script>
+</body>
+
+</html>

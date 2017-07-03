@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>清控人居-智慧水务</title>
+  <!-- Global stylesheets -->
+  <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/QKRJ.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+  <!-- /global stylesheets -->
+  <!-- Core JS files -->
+  <script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+  <!-- /core JS files -->
+  <!-- Theme JS files -->
+  <script type="text/javascript" src="assets/js/plugins/ui/nicescroll.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/app.js"></script>
+  <script type="text/javascript" src="assets/js/pages/layout_fixed_custom.js"></script>
+  <!-- /theme JS files -->
+</head>
+
+<body>
+  <!-- 内容 -->
+  <div class="page-container">
+    <!-- Page content -->
+    <div class="page-content">
+      <!-- Main content -->
+      <div class="content-wrapper no-padding-bottom">
+        <!-- Content area -->
+        <div id="qk-map-data" class="content qkrj_map_bg position-relative">
+          <h2 class="mt">智水地图</h2>
+          <div class="row">
+            <div class="panel panel-default ml mr introduction">
+              <div class="panel-body">
+                概述 智水地图是什么，能解决什么问题，如何入门使用，都支持哪些平台
+              </div>
+            </div>
+          </div>
+          <div class="row survey">
+            <a href="./helloworld.html" class="col-md-3 col-sm-6 col-xs-12">
+              <div class="cell money">
+                <i class="fa fa-money"></i>
+                <span>开发指南</span>
+              </div>
+            </a>
+            <a href="./case.html" class="col-md-3 col-sm-6 col-xs-12">
+              <div class="cell th">
+                <i class="fa fa-th"></i>
+                <span>应用案例</span>
+              </div>
+            </a>
+            <a href="./interface.html?name=helloWorld&child=viewMap" class="col-md-3 col-sm-6 col-xs-12">
+              <div class="cell user">
+                <i class="fa fa-user"></i>
+                <span>接口详情</span>
+              </div>
+            </a>
+            <a href="./Resources.html" class="col-md-3 col-sm-6 col-xs-12 ">
+              <div class="cell eye">
+                <i class="fa fa-eye"></i>
+                <span>地图资源</span>
+              </div>
+            </a>
+          </div>
+          <div class="row">
+            <div class="ap col-md-12">
+              API地址：http://192.168.200.12:8585/mapapi/RMap.js
+            </div>
+          </div>
+          <div class="row">
+            <div class="chart col-md-12">
+              
+              <div class="top">
+                <span>获取地图信息</span>
+              </div>
+              <iframe src="./RMap/Examples/getMapInformation.html" frameborder="0" style="width: 100%;height:500px;"></iframe>
+            </div>
+          </div>
+        </div>
+        <!-- content area -->
+      </div>
+      <!-- /main content -->
+    </div>
+    <!-- /page content -->
+  </div>
+  <!-- /内容 -->
+  <script>
+    window.onresize = function () {
+      var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      document.getElementById("qk-map-data").style.height = h -46 + "px";
+      // $("#code_area").css("height",(h-100)+"px")
+
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>绘制矩形</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="http://192.168.200.100:8020/RunMapAPI/develop/RMap/RMap.js"></script>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+				height: 100%;
+			}
+			.map {
+				position:absolute;
+				height: 100%;
+				right:0;
+				left:0;
+			}
+			.menuBar {
+				position: relative;
+				top: 10px;
+				left: 50px;
+				width: 800px;
+				z-index:9999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="map" class="map"></div>
+		<div class="menuBar">
+			<input type="button" value="绘制矩形" onclick="drawRect()" />图形ID：
+			<input id="graphicID" type="text" style="width: 100px;" />
+			<input type="button" value="删除指定ID矩形" onclick="deleteRectByID()" />
+			<input type="button" value="移除所有绘制图形" onclick="removeAll()" />
+		</div>
+	</body>
+	<script>
+		 //初始化地图
+		var rmap = new RMap.Map('map');
+		 //画矩形
+		function drawRect() {
+			//画矩形
+			rmap.drawRect(onDrawRectComplate)
+		};
+		 //绘制画矩形完成
+		function onDrawRectComplate(e) { //拉框画矩形
+			graphicID.value = e.id;
+		};
+		 //删除指定ID矩形
+		function deleteRectByID(){
+			rmap.removeDrawRect(graphicID.value); 
+		};
+		 //移除所有绘制图形
+		function removeAll() {
+			rmap.removeDrawRect(); 
+		};
+	</script>
+
+</html>

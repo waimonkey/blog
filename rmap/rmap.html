@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HelloWorld</title>
+		<meta charset="utf-8" />
+		<script src="http://192.168.200.100:8020/RunMapAPI/develop/RMap/RMap.js"></script>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+			}
+			html,body,#map {
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="map" class="map"></div>
+		</div>
+	</body>
+	<script>
+		var rmap;
+//		?name=GDYX_OL&type=baseLayer
+//		?name=china_dijishi&type=thematicLayer
+		var mapName = getQueryString("name");
+		var mapType = getQueryString("type");
+		if(mapType == "baseLayer"){
+			rmap = new RMap.Map('map',{type:[mapName]})
+		}else{
+			rmap = new RMap.Map('map');
+		}
+		if(mapType == "thematicLayer"){
+			rmap.addLayer(mapName);
+		}
+		
+		
+		function getQueryString(name) {
+		    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+		    var r = window.location.search.substr(1).match(reg);
+		    if (r != null) {
+		        return unescape(r[2]);
+		    }
+		    return null;
+		}
+	</script>
+</html>

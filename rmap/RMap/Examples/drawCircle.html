@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>绘制圆</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="http://192.168.200.100:8020/RunMapAPI/develop/RMap/RMap.js"></script>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+				height: 100%;
+			}
+			.map {
+				position:absolute;
+				height: 100%;
+				right:0;
+				left:0;
+			}
+			.menuBar {
+				position: relative;
+				top: 10px;
+				left: 50px;
+				width: 800px;
+				z-index:9999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="map" class="map"></div>
+
+		<div class="menuBar">
+			<input type="button" value="绘制圆" onclick="circleSearch()" /> 图形ID：
+			<input id="graphicID" type="text" style="width: 50px;" />
+			<input type="button" value="删除指定ID圆" onclick="deleteCircleByID()" />
+			<input type="button" value="清空地图" onclick="clearMap()" />
+		</div>
+	</body>
+	<script>
+		 //初始化地图
+		var rmap = new RMap.Map('map');
+		var cId = 0;
+		 //画圆
+		function circleSearch() {
+			//画圆
+			rmap.drawCircle(onDrawCircleComplate, {
+				id: cId++,
+				color: "rgba(100, 0, 0, 0.5)"
+			});
+		};
+		 //绘制画圆完成
+		function onDrawCircleComplate(e) { //拉框画圆
+			e.id; //图形id
+			e.center; //圆心坐标
+			e.radius; //圆的半径
+			e.minPoint; //圆外接矩形的最小值
+			e.maxPoint; //圆外接矩形的最大值
+			e.extent;
+//			e.polygonPoints; //组成圆形的点
+			graphicID.value = e.id;
+		};
+		 //删除第一个圆
+		function deleteCircleByID() {
+			rmap.removeDrawCircle(graphicID.value);
+		};
+		 //清空地图
+		function clearMap() {
+			rmap.removeDrawCircle();
+		};
+	</script>
+
+</html>

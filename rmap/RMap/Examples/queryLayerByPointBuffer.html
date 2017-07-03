@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>缓冲查询</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="http://192.168.200.100:8020/RunMapAPI/develop/RMap/RMap.js"></script>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+				height: 100%;
+			}
+			.map {
+				position:absolute;
+				height: 100%;
+				right:0;
+				left:0;
+			}
+			.menuBar {
+				position: relative;
+				top: 10px;
+				left: 50px;
+				width: 800px;
+				z-index:9999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="map" class="map"></div>
+		<div class="menuBar" style="padding-top: 0;">
+			<input type="button" value="点缓冲查询" onclick="queryBtnClick()" />
+			<input type="button" value="清除查询结果" onclick="removeQuery()" />
+		</div>
+	</body>
+	<script>
+		//初始化地图
+		var rmap = new RMap.Map('map',{
+			type:['NNMap_DX'],
+			center:[108.37, 22.83],
+			zoom:1
+		});
+		//查询
+		function queryBtnClick() {
+			
+			rmap.queryLayerByPointBuffer(108.37, 22.83, 10000, "NNMap_DX_YLBJ", {
+				queryWhere:"SUBTYPE='11'",
+				geoQueryType:"intersects",//几何查询条件类型（相交：intersects，包含：within）
+				onClick:onClick,
+				onResult:onResult,
+//				color:'#ff0000'
+			})
+		};
+		
+		function removeQuery(){
+			rmap.removeQueryResult();
+		}
+		
+		function onClick(e) {
+			debugger;
+		}
+		function onResult(e) {
+//			debugger;
+		}
+	</script>
+
+</html>

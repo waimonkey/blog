@@ -1,0 +1,717 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Calibri","sans-serif";}
+h1
+	{mso-style-link:"标题 1 Char";
+	margin-top:17.0pt;
+	margin-right:0cm;
+	margin-bottom:16.5pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:240%;
+	page-break-after:avoid;
+	font-size:22.0pt;
+	font-family:"Calibri","sans-serif";}
+h2
+	{mso-style-link:"标题 2 Char";
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:173%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light","sans-serif";}
+h3
+	{mso-style-link:"标题 3 Char";
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:173%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"页眉 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	layout-grid-mode:char;
+	border:none;
+	padding:0cm;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"页脚 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";}
+span.Char
+	{mso-style-name:"页眉 Char";
+	mso-style-link:页眉;}
+span.Char0
+	{mso-style-name:"页脚 Char";
+	mso-style-link:页脚;}
+span.1Char
+	{mso-style-name:"标题 1 Char";
+	mso-style-link:"标题 1";
+	font-weight:bold;}
+span.2Char
+	{mso-style-name:"标题 2 Char";
+	mso-style-link:"标题 2";
+	font-family:"Calibri Light","sans-serif";
+	font-weight:bold;}
+span.3Char
+	{mso-style-name:"标题 3 Char";
+	mso-style-link:"标题 3";
+	font-weight:bold;}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<h2><span style='font-family:宋体'>拉框查询</span></h2>
+
+<h3><span lang=EN-US>rectQuery(layerName,option)</span></h3>
+
+<p class=MsoNormal><span style='font-family:宋体'>拉框查询</span> </p>
+
+<table class=MsoTable15List6ColorfulAccent6 border=1 cellspacing=0
+ cellpadding=0 style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=168 colspan=2 valign=top style='width:125.9pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>参数</span></b></p>
+  </td>
+  <td width=131 valign=top style='width:98.45pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>类型</span></b></p>
+  </td>
+  <td width=269 valign=top style='width:201.75pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>描述</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 colspan=2 valign=top style='width:125.9pt;border:none;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>layerName</span></b></p>
+  </td>
+  <td width=131 valign=top style='width:98.45pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>String</span></p>
+  </td>
+  <td width=269 valign=top style='width:201.75pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体;color:black'>图层名称，该</span><span
+  lang=EN-US style='color:black'>Id</span><span style='font-family:宋体;
+  color:black'>从图层资源列表中获取</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=168 colspan=2 valign=top style='width:125.9pt;border:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>option</span></b></p>
+  </td>
+  <td width=131 valign=top style='width:98.45pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>可选</span></p>
+  </td>
+  <td width=269 valign=top style='width:201.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=28 valign=top style='width:21.3pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=139 valign=top style='width:104.6pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>queryWhere</span></p>
+  </td>
+  <td width=131 valign=top style='width:98.45pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>String</span></p>
+  </td>
+  <td width=269 valign=top style='width:201.75pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>属性查询条件。示例：</span><span
+  lang=EN-US>NAME=’</span><span style='font-family:宋体'>张三</span><span
+  lang=EN-US>’ and AGE&gt;20</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=28 valign=top style='width:21.3pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=139 valign=top style='width:104.6pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>geoQueryType</span></p>
+  </td>
+  <td width=131 valign=top style='width:98.45pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>String</span></p>
+  </td>
+  <td width=269 valign=top style='width:201.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>几何查询条件类型（相交：</span><span
+  lang=EN-US>intersects</span><span style='font-family:宋体'>，包含：</span><span
+  lang=EN-US>within</span><span style='font-family:宋体'>）</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=28 valign=top style='width:21.3pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=139 valign=top style='width:104.6pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>styleIn</span></p>
+  </td>
+  <td width=131 valign=top style='width:98.45pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>polygonStyle</span></p>
+  </td>
+  <td width=269 valign=top style='width:201.75pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>几何查询条件样式</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=28 valign=top style='width:21.3pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=139 valign=top style='width:104.6pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>styleOut</span></p>
+  </td>
+  <td width=131 valign=top style='width:98.45pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>pointStyle| lineStyle| polygonStyle</span></p>
+  </td>
+  <td width=269 valign=top style='width:201.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>查询结果样式</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=28 valign=top style='width:21.3pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=139 valign=top style='width:104.6pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>onClick</span></p>
+  </td>
+  <td width=131 valign=top style='width:98.45pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Function</span></p>
+  </td>
+  <td width=269 valign=top style='width:201.75pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>当点击结果时执行的回调函数，回传的参数参见</span><span
+  lang=EN-US>onClick</span><span style='font-family:宋体'>回调函数参数表。示例：</span><span
+  lang=EN-US>function(event){…}</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=28 valign=top style='width:21.3pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=139 valign=top style='width:104.6pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>onResult</span></p>
+  </td>
+  <td width=131 valign=top style='width:98.45pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Function</span></p>
+  </td>
+  <td width=269 valign=top style='width:201.75pt;border:none;border-bottom:
+  solid #70AD47 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>查询完成后的回调函数，详细参数见回调参数表</span></p>
+  <p class=MsoNormal><span style='font-family:宋体'>示例：</span><span lang=EN-US>function(event)
+  {…}</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>onClick</span><span style='font-family:
+宋体'>回调事件参数</span></p>
+
+<table class=MsoTable15List6ColorfulAccent6 border=1 cellspacing=0
+ cellpadding=0 style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=158 colspan=2 valign=top style='width:118.8pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>参数</span></b></p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>类型</span></b></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>描述</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 colspan=2 valign=top style='width:118.8pt;border:none;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>event</span></b></p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>可选</span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=113 valign=top style='width:3.0cm;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>result</span></p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Object</span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>属性列表</span></p>
+  </td>
+ </tr>
+ <tr height=0>
+  <td width=45 style='border:none'></td>
+  <td width=113 style='border:none'></td>
+  <td width=104 style='border:none'></td>
+  <td width=306 style='border:none'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>onResult</span><span style='font-family:
+宋体'>回调事件参数</span></p>
+
+<table class=MsoTable15List6ColorfulAccent6 border=1 cellspacing=0
+ cellpadding=0 style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=158 colspan=2 valign=top style='width:118.8pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>参数</span></b></p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>类型</span></b></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>描述</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 colspan=2 valign=top style='width:118.8pt;border:none;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>event</span></b></p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>可选</span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=45 valign=top style='width:33.75pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=113 valign=top style='width:3.0cm;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>result</span></p>
+  </td>
+  <td width=104 valign=top style='width:78.0pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Array</span></p>
+  </td>
+  <td width=306 valign=top style='width:229.3pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>查询结果，对应返回字段以及内容</span></p>
+  </td>
+ </tr>
+ <tr height=0>
+  <td width=45 style='border:none'></td>
+  <td width=113 style='border:none'></td>
+  <td width=104 style='border:none'></td>
+  <td width=306 style='border:none'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>点样式</span></p>
+
+<table class=MsoTable15List6ColorfulAccent6 border=1 cellspacing=0
+ cellpadding=0 style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=155 colspan=2 valign=top style='width:116.2pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>参数</span></b></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>类型</span></b></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>描述</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 colspan=2 valign=top style='width:116.2pt;border:none;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>pointStyle</span></b></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>可选</span></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=44 valign=top style='width:32.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=111 valign=top style='width:83.3pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>pic</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>String</span></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>自义图片的路径</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=44 valign=top style='width:32.9pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=111 valign=top style='width:83.3pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>anchor</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>[Number,Number]</span></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border:none;border-bottom:
+  solid #70AD47 1.0pt;background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>图标偏移</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>线样式</span></p>
+
+<table class=MsoTable15List6ColorfulAccent6 border=1 cellspacing=0
+ cellpadding=0 style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=155 colspan=2 valign=top style='width:116.2pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>参数</span></b></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>类型</span></b></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>描述</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 colspan=2 valign=top style='width:116.2pt;border:none;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>lineStyle</span></b></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>可选</span></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=44 valign=top style='width:32.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=111 valign=top style='width:83.3pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>width</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Number</span></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>线的宽度</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=44 valign=top style='width:32.9pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=111 valign=top style='width:83.3pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>color</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>String</span></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>颜色值，示例：</span><span
+  lang=EN-US>'#FF000'</span><span style='font-family:宋体'>、</span><span
+  lang=EN-US> 'red'</span><span style='font-family:宋体'>。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=44 valign=top style='width:32.9pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=111 valign=top style='width:83.3pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>opacity</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Number</span></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border:none;border-bottom:
+  solid #70AD47 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>透明度，</span><span lang=EN-US>0-1</span><span
+  style='font-family:宋体'>。</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>面样式</span></p>
+
+<table class=MsoTable15List6ColorfulAccent6 border=1 cellspacing=0
+ cellpadding=0 style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=155 colspan=2 valign=top style='width:116.2pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>参数</span></b></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>类型</span></b></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border-top:solid #70AD47 1.0pt;
+  border-left:none;border-bottom:solid #70AD47 1.0pt;border-right:none;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span style='font-family:宋体'>描述</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=155 colspan=2 valign=top style='width:116.2pt;border:none;
+  background:#E2EFD9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>polygonStyle</span></b></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>可选</span></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=44 valign=top style='width:32.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=111 valign=top style='width:83.3pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>color</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>String</span></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>颜色值，示例：</span><span
+  lang=EN-US>'#FF000'</span><span style='font-family:宋体'>、</span><span
+  lang=EN-US> 'red'</span><span style='font-family:宋体'>。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=44 valign=top style='width:32.9pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=111 valign=top style='width:83.3pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>opacity</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Number</span></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>透明度，</span><span lang=EN-US>0-1</span><span
+  style='font-family:宋体'>。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=44 valign=top style='width:32.9pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=111 valign=top style='width:83.3pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>outLineWidth</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Number</span></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>外部线条样式，宽度</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=44 valign=top style='width:32.9pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=111 valign=top style='width:83.3pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>outLineColor</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>String</span></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border:none;background:#E2EFD9;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>外部线条样式，颜色值，示例：</span><span
+  lang=EN-US>'#FF000'</span><span style='font-family:宋体'>、</span><span
+  lang=EN-US> 'red'</span><span style='font-family:宋体'>。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=44 valign=top style='width:32.9pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+  </td>
+  <td width=111 valign=top style='width:83.3pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>outLineOpacity</span></p>
+  </td>
+  <td width=119 valign=top style='width:89.15pt;border:none;border-bottom:solid #70AD47 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US>Number</span></p>
+  </td>
+  <td width=294 valign=top style='width:220.75pt;border:none;border-bottom:
+  solid #70AD47 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span style='font-family:宋体'>外部线条样式，透明度，</span><span
+  lang=EN-US>0-1</span><span style='font-family:宋体'>。</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

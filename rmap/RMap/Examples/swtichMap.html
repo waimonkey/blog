@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>切换底图</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="http://192.168.200.100:8020/RunMapAPI/develop/RMap/RMap.js"></script>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+				height: 100%;
+			}
+			.map {
+				position:absolute;
+				height: 100%;
+				right:0;
+				left:0;
+			}
+			.menuBar {
+				position: relative;
+				top: 10px;
+				left: 50px;
+				width: 800px;
+				z-index:9999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="map" class="map"></div>
+
+		<div class="menuBar">
+			<input type="button" value="矢量图" onclick="vectorMap()" />
+			<input type="button" value="影像图" onclick="imageMap()" />
+		</div>
+	</body>
+	<script>
+		 //初始化地图
+		var rmap = new RMap.Map('map',{
+			type: ["GDSL_OL","GDYX_OL"]
+		});
+
+		function vectorMap() {
+			rmap.switchMap("GDSL_OL");
+		};
+		function imageMap() {
+			rmap.switchMap("GDYX_OL");
+		};
+	</script>
+
+</html>

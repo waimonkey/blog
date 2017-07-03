@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>清控人居-智慧水务</title>
+  <!-- Global stylesheets -->
+  <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/QKRJ.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+  <!-- /global stylesheets -->
+  <!-- Core JS files -->
+  <script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+  <!-- /core JS files -->
+  <!-- Theme JS files -->
+  <script type="text/javascript" src="assets/js/plugins/ui/nicescroll.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/app.js"></script>
+  <script type="text/javascript" src="assets/js/pages/layout_fixed_custom.js"></script>
+  <!-- /theme JS files -->
+</head>
+
+<body>
+  <!-- 内容 -->
+  <div class="page-container">
+    <!-- Page content -->
+    <div class="page-content">
+      <!-- Main content -->
+      <div class="content-wrapper no-padding-bottom">
+        <!-- Content area -->
+        <div id="qk-map-data" class="content qkrj_map_bg position-relative">
+          <iframe name="mainframe" style="height:100%; width: 100%; overflow: scroll;" src="./RMap/Guide/guide.htm" frameborder="0" scrolling="yes" id="iframe" >
+          </iframe>
+        </div>
+        <!-- content area -->
+      </div>
+      <!-- /main content -->
+    </div>
+    <!-- /page content -->
+  </div>
+  <!-- /内容 -->
+  <script>
+    window.onresize = function () {
+      var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      document.getElementById("qk-map-data").style.height = h - 46 + "px";
+      $("#iframe").css("height",(h-50)+"px")
+
+    }
+  </script>
+</body>
+
+</html>

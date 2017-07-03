@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>清空地图</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="http://192.168.200.100:8020/RunMapAPI/develop/RMap/RMap.js"></script>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+				height: 100%;
+			}
+			.map {
+				position:absolute;
+				height: 100%;
+				right:0;
+				left:0;
+			}
+			.menuBar {
+				position: relative;
+				top: 10px;
+				left: 50px;
+				width: 800px;
+				z-index:9999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="map" class="map"></div>
+		<div class="menuBar">
+			<input type="button" value="添加单点" onclick="addOnePoint()" />
+			<input type="button" value="简单添加矩形" onclick="addSimpleRect()" />
+			<input type="button" value="一次画一条线" onclick="drawLine()" />
+			<input type="button" value="清除" onclick="clearMap()" />
+		</div>
+	</body>
+	<script>
+		 //初始化地图
+		var rmap = new RMap.Map('map');
+		 //添加单点
+		function addOnePoint() {
+			rmap.addPoint(116.34979, 40.04442); //简单调用    
+		};
+		
+		//简单添加矩形
+		function addSimpleRect() {
+//			rmap.addRect(110.2,36,112,38); //简单调用    
+//			rmap.extent(110, 35, 117, 39);
+		};
+		
+		//画线1条
+		function drawLine() {
+//			//画线
+//			rmap.drawLine(onDrawLineComplate, {
+//				color:'#00FF00',
+//				width:2
+//			})
+		};
+		 //绘制画线完成
+		function onDrawLineComplate(e) {};
+		
+		function clearMap(){
+			rmap.clearMap();
+		}
+	</script>
+
+</html>

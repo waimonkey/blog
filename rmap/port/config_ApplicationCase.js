@@ -1,0 +1,20 @@
+//应用案例
+var ApplicationCase = [{
+	name:"case1",
+	label:"示例一",
+	describe:"现有一组点数据，在地图上添加该组点，地图缩放居中到该组点，点击点弹出气泡窗口，气泡窗口显示该点位的属性值。该示例用到接口：addPoint、extentByData、showPopWindow",
+	isHaveChildren:"false",
+	url:"./RMap/Examples/Case/case1.html"
+},{
+	name:"case2",
+	label:"示例二",
+	describe:"后台返回JSON数据，该数据为一组待经纬度的点数据，在地图上添加该组点，根据不同属性显示不同图标，并点在点击时弹出气泡窗口，气泡窗口显示该点位的属性值。该示例用到接口：pointList、showPopWindow",
+	isHaveChildren:"false",
+	url:"./RMap/Examples/Case/case1.html"
+},{
+	name:'case3',
+	label:"示例三",
+	describe:"添加轨迹线，附有轨迹方向箭头，有重复轨迹时以弧线展示，并展示重复次数。该示例用到接口：addPoint、extentByData、showPopWindow",
+	isHaveChildren:"false",
+	url:"./RMap/Examples/Case/case3.html"
+}]
