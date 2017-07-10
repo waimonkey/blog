@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      height: 1rem;
+      background-color: green;
+      text-align: center;
+      line-height: 1rem;
+      width: 100%;
+      color: #fff;
+      font-size: .48rem;
+    }
+    /* 适配两种设备 320 640 */
+    /* 
+    1.设置默认基准值  假设默认基准值是50px;
+    2.适配就是基于这个默认基准值做事配 320 50px  640 640/320*50
+    3.所有的单位都是用rem
+     */
+    html {
+       font-size: 50px;
+    }
+    @media screen and(min-width: 640px) {
+      html {
+        font-size: 100px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>购物车</header>
+</body>
+</html>

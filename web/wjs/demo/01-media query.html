@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      width: 1200px;
+      height: 1000px;
+      background-color: red;
+      margin: 0 auto;
+    }
+    /*
+    1. 宽屏设备 版心宽度1170px 背景粉
+    2. 中等设备  970 绿
+    3.小 750 
+     */
+    
+    @media screen and (min-width:1200px) {
+      /*width: 1170px;
+      background-color: pink;*/
+      .container {
+        width: 1170px;
+        background-color: pink;
+      }
+    }
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+      .container {
+         width: 970px;
+        background-color: green;
+      }
+    }
+     @media screen and (min-width: 768px) and (max-width: 992px) {
+      .container {
+         width: 750px;
+        background-color: blue;
+      }
+    }
+     @media screen and (max-width: 768px) {
+      .container {
+         width: 100%;
+        background-color: yellow;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container"></div>
+</body>
+
+</html>

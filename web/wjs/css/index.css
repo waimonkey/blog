@@ -1,0 +1,222 @@
+/* common css */
+body {
+  font-size: 12px;
+  color: #333;
+  font-family:"微软雅黑";
+}
+a {
+  color: #333;
+}
+a:hover {
+  text-decoration: none;
+  color:
+}
+/* 自定义第三方字体 */
+@font-face {
+  font-family: "wjs_font";
+  src:url("../fonts/MiFie-Web-Font.svg") format("svg"),
+  url("../fonts/MiFie-Web-Font.eot") format("embeded-opentype"),
+  url("../fonts/MiFie-Web-Font.ttf") format("truetype"),
+  url("../fonts/MiFie-Web-Font.woff") format("woff");
+}
+/* 声明微金所图标字体 */
+.wjs_icon {
+  font-family: wjs_font;
+}
+/* 定义一个图标
+1.不能直接在标签内写代表图标的字符
+2.需要写在伪类当中的content
+3.
+ */
+.wjs_icon_phone::before {
+  content: "\e908";
+}
+.wjs_icon_tel::before {
+  content: "\e909";
+}
+.wjs_icon_logo::before {
+  content: "\e920";
+}
+.wjs_icon_word::before {
+  content: "\e93e";
+}
+/* model css */
+
+.wjs_topbar {
+  border-bottom: 1px solid #ccc;
+ 
+  line-height: 40px;
+  text-align: center;
+}
+.wjs_topbar > .container > .row > div{
+  height: 40px;
+  border-left: 1px solid #ccc;
+}
+.wjs_topbar > .container > .row >div:first-child {
+  border-left:none;
+}
+.wjs_topbar  .wjs_downApp {
+  position: relative;
+  display: block;
+  z-index: 999;
+}
+.wjs_topbar .wjs_downApp img{
+  display: none;
+}
+.wjs_topbar  .wjs_downApp:hover img {
+  display:block;
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  margin-left: -60px;
+   border: 1px solid #ccc;
+  border-top: none;
+ 
+}
+.wjs_topbar .btn-register {
+  font-size:12px;
+  padding: 3px 12px;
+  background-color: #e92322;
+}
+.wjs_topbar .btn-login {
+  color:#333;
+  font-size:12px;
+  text-decoration:none;
+}
+
+
+/* 导航 */
+
+.wjs_nav {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  border:none;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0;
+}
+.wjs_nav .wjs_icon_logo {
+  font-size:50px;
+  color:#e92322;
+  vertical-align: middle;
+}
+.wjs_nav .wjs_icon_word {
+ font-size:36px;
+  color:#333;
+  vertical-align: middle;
+}
+.wjs_nav .navbar-brand {
+  color: #777;
+  height: 80px;
+  line-height:50px;
+}
+.wjs_nav .navbar-brand:hover,
+.wjs_nav .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.wjs_nav .navbar-text {
+  color: #777;
+}
+.wjs_nav .navbar-nav > li > a {
+  color: #777;
+  height: 80px;
+  line-height:50px;
+}
+.wjs_nav .navbar-nav > li > a:hover,
+.wjs_nav .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: transparent;
+  border-bottom: 3px solid #e92322;
+}
+.wjs_nav .navbar-nav > .active > a,
+.wjs_nav .navbar-nav > .active > a:hover,
+.wjs_nav .navbar-nav > .active > a:focus {
+  border-bottom: 3px solid #e92322;
+  
+}
+.wjs_nav .navbar-nav > .disabled > a,
+.wjs_nav .navbar-nav > .disabled > a:hover,
+.wjs_nav .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.wjs_nav .navbar-toggle {
+  border-color: #ddd;
+  margin-top: 23px;
+  margin-bottom: 23px;
+}
+.wjs_nav .navbar-toggle:hover,
+.wjs_nav .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.wjs_nav .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.wjs_nav .navbar-collapse,
+.wjs_nav .navbar-form {
+  border-color: #e7e7e7;
+}
+.wjs_nav .navbar-nav > .open > a,
+.wjs_nav .navbar-nav > .open > a:hover,
+.wjs_nav .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .wjs_nav .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .wjs_nav .navbar-nav .open .dropdown-menu > li > a:hover,
+  .wjs_nav .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .wjs_nav .navbar-nav .open .dropdown-menu > .active > a,
+  .wjs_nav .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .wjs_nav .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .wjs_nav .navbar-nav .open .dropdown-menu > .disabled > a,
+  .wjs_nav .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .wjs_nav .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.wjs_nav .navbar-link {
+  color: #777;
+}
+.wjs_nav .navbar-link:hover {
+  color: #333;
+}
+.wjs_nav .btn-link {
+  color: #777;
+}
+.wjs_nav .btn-link:hover,
+.wjs_nav .btn-link:focus {
+  color: #333;
+}
+.wjs_nav .btn-link[disabled]:hover,
+fieldset[disabled] .wjs_nav .btn-link:hover,
+.wjs_nav .btn-link[disabled]:focus,
+fieldset[disabled] .wjs_nav .btn-link:focus {
+  color: #ccc;
+}
+
+/* 轮播图 */
+/*轮播图*/
+.wjs_banner{}
+.wjs_banner .pc_imgBox{
+    display: block;
+    height: 410px;
+    background: no-repeat center/cover;
+}
+.wjs_banner .m_imgBox{
+    display: block;
+    width: 100%;
+}
+.wjs_banner .m_imgBox img{
+    width: 100%;
+    display: block;
+}
