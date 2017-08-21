@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #app {
+      width: 80%;
+      height: 314px;
+      background-color: #ccc;
+      border: 1px solid #666;
+      padding-top: 50px;
+      box-sizing: border-box;
+    }
+    .result,.enter {
+      height: 21px;
+      text-align: right;
+      margin: 0 10px 10px 0;
+    }
+    .keys {
+      width: 100%;
+      background-color: #fff;
+      height: 200px;
+    }
+    .list {
+     width: 100%;
+      background-color: #fff;
+      height: 200px;
+
+    }
+    .key {
+      float: left;
+      width: 25%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      border-top: none;
+      border-left: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="result">{{result}}</div>
+    <div class="enter">{{enter === ''?0:enter}}</div>
+    <div class="keys">
+      <div class="list">
+        <keyboard
+          v-for="item in keys"
+          :value="item"
+          class="key"
+        ></keyboard>
+      </div>
+    </div>
+  </div>
+  <script src="../node_modules/vue/dist/vue.js"></script>
+  <script src="../node_modules/vuex/dist/vuex.js"></script>
+  <script>
+    const store = new Vuex.Store({
+      state: {
+        result: '',
+        enter: ''
+      },
+      mutations:{
+        calculate(state,value){
+          //当按键的值是=的时候
+          if(value === '=') {
+            state.result = eval(state.enter)
+            state.enter += value
+          }else if (value === 'clear') {
+            state.result = state.enter = "";
+          }else {
+             state.enter += value
+          }
+        }
+      }
+    });
+      Vue.component('keyboard', {
+        props: ['value'],
+        template: `<div
+              @click = 'getValue'
+              :data-value = 'value'>
+                {{value}}
+              </div>`,
+        methods:{
+          getValue(evnet){
+            //获取当前按键的值
+            let value = event.target.dataset.value;
+            this.$store.commit("calculate",value)
+          }
+        }
+      })
+    const vm = new Vue({
+      el: '#app',
+      store,
+      data:{
+        keys:[
+          'clear','+','-','*',
+          '7','8','9','/',
+          '4','5','6','0',
+          '1','2','3','='
+        ]
+      },
+      computed:{
+        result(){
+          return this.$store.state.result
+        },
+        enter(){
+          return this.$store.state.enter
+        }
+      }
+
+    })
+  </script>
+</body>
+
+</html>

@@ -12,6 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.13",
-    "vue": "^2.4.2"
+    "vue": "^2.4.2",
+    "vue-router": "^2.7.0",
+    "vuex": "^2.3.1"
   }
 }
