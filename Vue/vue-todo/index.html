@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .edit {
+      display: blocl;
+      width: 80%;
+      height: 35px;
+      margin: 50px auto;
+      border-radius: 5px;
+      outline-style: none;
+      border: 1px solid #ccc;
+      padding-left: 5px;
+      box-shadow: 0 0 5px #ccc;
+    }
+    
+    .list {
+      margin: 0 auto;
+      width: 80%;
+    }
+    
+    .unit {
+      position: relative;
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc;
+    }
+    
+    .unit:last-child {
+      border-bottom: none;
+    }
+    
+    .delete {
+      display: inline-block;
+      background-color: red;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      padding: 5px 10px;
+    }
+    
+    .finished {
+      color: #ccc;
+      text-decoration: line-through;
+    }
+    .info {
+      color: #ccc;
+      font-size: 25px;
+      text-align: center;
+      width: 80%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <input @keydown.enter="addTask" v-model="task.content" class="edit" type="text" placeholder="编写任务">
+    <div class="list">
+      <p 
+      v-if="list.length === 0"
+      class="info" 
+      >暂无任务</p>
+      <div v-for="(item,index) in list" class="unit">
+        <input 
+        @click="changeStatus(index)"
+        :checked="item.finish" 
+        type="checkbox">
+        <span 
+        :class="{'finished':item.finish}">
+        {{item.content}}
+        </span>
+        <button 
+        @click = "removeTask(index)"
+        class="delete" 
+        >删除</button>
+      </div>
+    </div>
+  </div>
+  <script src="../node_modules/vue/dist/vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        task: {
+          content: '',
+          finish: false,
+          delete: false
+        },
+        list: []
+      },
+      methods: {
+        addTask: function () {
+          //将 input中的内容添加到 list中
+          this.list.push(this.task)
+            //添加完成之后 清空 task
+          this.task = {
+            content: '',
+            finish: false,
+            delete: false
+          }
+        },
+        changeStatus: function (index) {
+          let cerrentState = this.list[index].finish
+          this.list[index].finish = !cerrentState
+        },
+        removeTask:function (index) {
+          this.list.splice(index,1)
+        }
+      }
+
+    })
+  </script>
+</body>
+
+</html>
