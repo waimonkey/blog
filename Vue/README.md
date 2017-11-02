@@ -263,3 +263,42 @@ data:{
 ```
 
 `v-else` 元素必须紧跟在 带 `v-if` 或者 `v-else-if` 的元素的后面,否则他将不会被识别
+
+### v-else-if
+
+>2.1.0
+
+`v-else-if` 顾名思义,充当 `v-if` 的else-if 块 可以连续使用?
+
+```html
+<div v-if="type === 'a'">
+  a
+</div>
+
+<div v-else-if="type==='b'">b</div>
+<div v-else-if="type==='v'">v</div>
+<div v-else>not a/b/c</div>
+
+
+```
+
+类似于 `v-else` `v-else-if` 也必须紧跟在带 `v-if`或者`v-else-if`的元素之后
+
+### 用 key 管理可复用的元素
+
+vue或尽可能的搞笑的渲染元素 通常会服用已有元素而不是从头开始渲染 这么做除了使cue变得非常快之外 还有其他的一些好处,例如 如果你允许用户在不能的登录方式之间切换:
+
+```html
+<template v-if="loginType === 'username'">
+  <label>username</label>
+  <input placeholder="enter your username">
+</template>
+<template v-else>
+  <label>email</label>
+  <input placeholder="enter your email">
+</template>
+```
+
+那么上面的代码中切换 `loginType` 将不会清楚用户已经输入的内容,因为两个博班使用了相同的元素 `input`不会被替换掉--仅仅是替换了他的`placeholder`
+
+自己动手试一试 在输入框中输入一些文本 然后按下切换按钮:
