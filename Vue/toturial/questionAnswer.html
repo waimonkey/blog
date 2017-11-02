@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>是否问答</title>
+</head>
+
+<body>
+    <div id="APP">
+        <p>
+            请输入你的问题:
+            <input type="text" v-model="question">
+        </p>
+        <p>{{answer}}</p>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/axios/dist/axios.js"></script>
+    <script src="../node_modules/lodash/lodash.js"></script>
+    <script>
+    var vm = new Vue({
+        el: "#APP",
+        data: {
+            question: '',
+            answer: '请输入你的问题'
+        },
+        watch:{
+          question:function (newQiestion) {
+            this.answer = "正等你输入完成"
+            this.getAnswer()
+          }
+        },
+        methods: {
+            getAnswer: _.debounce(
+                function() {
+                    if (this.answer.indexOf("?") == -1) {
+                        this.answer = "问题需要以问号结尾"
+                    } else {
+                        this.answer = "稍等,正在思考..."
+                    }
+                    var that = this;
+                    axios.get("'https://yesno.wtf/api'")
+                        .then(function(res) {
+                            that.answer = _.capitalize(res.data.answer)
+                        })
+                        .catch(function(error) {
+                            that.answer = "出现错误" + error
+                        })
+                },
+                500
+            )
+        }
+    })
+    </script>
+</body>
+
+</html>
