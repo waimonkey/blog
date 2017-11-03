@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  <!-- 全局注册 -->
+  <my-component></my-component>
+  <!-- 局部注册 -->
+  <div>
+    <my-child-component></my-child-component>
+  </div>
+  <!-- 组件组合 -->
+  <div>
+    <Child :message="message"></Child>
+  </div>
+  <!-- 动态 prop -->
+  <div>
+    <input type="text" v-model="message">
+     <Child :message="message"></Child>
+  </div>
+</div>
+  <script src="../node_modules/vue/dist/vue.js"></script>
+  <script>
+  Vue.component('my-component',{
+    template:'<div>a custom component</div>'
+  })
+  Vue.component('Child',{
+    props:['message'],
+    template: '<span>{{message}}</span>'
+  })
+  var child = { 
+    template: '<div>a custom child component</div>'
+  }
+    var vm = new Vue({
+      el:'#app',
+      data:{
+        message:'nihao'
+      },
+      components:{
+        'my-child-component':child
+      }
+    })
+  </script>
+</body>
+</html>

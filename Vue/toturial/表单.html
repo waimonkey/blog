@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 文本 -->
+        <div>
+            <input type="text" v-model="message">
+            <p>message is:{{message}}</p>
+        </div>
+        <!-- 多行文本 -->
+        <div>
+            <span>multiline message is</span>
+            <p style="white-space: pre-line;">{{message}}</p>
+            <textarea name="" id="" cols="30" rows="10" v-model="message" placeholder="add multiple lines"></textarea>
+        </div>
+        <!-- 复选框 -->
+        <div>
+            <!-- 单个勾选 逻辑值 -->
+            <div>
+                <input type="checkbox" id="checkbox" v-model="checked">
+                <label for="checkbox">{{checked}}</label>
+            </div>
+            <!-- 多个勾选框绑定到同一个数组 -->
+            <div>
+                <input type="checkbox" id="jack" value="jack" v-model="checkNames">
+                <label for="jack">jack</label>
+                <input type="checkbox" id="john" value="john" v-model="checkNames">
+                <label for="john">john</label>
+                <input type="checkbox" id="mike" value="mike" v-model="checkNames">
+                <label for="mike">mike</label>
+                <input type="checkbox" id="merry" value="merry" v-model="checkNames">
+                <label for="merry">merry</label>
+                <input type="checkbox" id="tom" value="tom" v-model="checkNames">
+                <label for="tom">tom</label>
+                <br>
+                <span>checked names: {{checkNames}}</span>
+            </div>
+        </div>
+        <!-- 单选按钮 -->
+        <div>
+            <input type="radio" id="one" value="one" v-model="picked">
+            <label for="one">one</label>
+            <br>
+            <input type="radio" id="two" value="two" v-model="picked">
+            <label for="two">two</label>
+            <br>
+            <span>picked: {{picked}}</span>
+        </div>
+        <!-- 选择列表 -->
+        <div>
+            <select name="" id="" v-model="selected">
+                <option value="" disabled>请选择</option>
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+            </select>
+            <span>selected is: {{selected}}</span>
+        </div>
+        <!-- 多选列表 绑定到同一个数组 -->
+        <div>
+            <select name="" id="" v-model="selected1" multiple>
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+            </select>
+            <span>selected is: {{selected1}}</span>
+        </div>
+        <!-- 动态选项 用 v-for 渲染 -->
+        <div>
+            <select name="" id="" v-model="selected3">
+                <option v-for="option in selecties" :value="option.value" :disabled="option.option">{{option.text}}</option>
+            </select>
+            <span>selected is: {{selected3}}</span>
+        </div>
+        <!-- 值绑定 -->
+        <div>
+            <input type="radio" v-model="picked1" value="a">
+            <p>{{picked1}}</p>
+            <input type="checkbox" v-model="checked1" value="b">
+            <p>{{checked1}}</p>
+        </div>
+        <!-- 复选康 -->
+        <div>
+            <input type="checkbox" v-model="toggle" :true-value='a' :false-value='b'>
+            <p>{{toggle}}</p>
+        </div>
+        <!-- 修饰符 -->
+        <div>
+            <!-- lazy -->
+            <div>
+                <input type="text" v-model.lazy="msg">
+                <p>{{msg}}</p>
+            </div>
+        </div>
+        <!-- number -->
+        <div>
+            <input type="number" v-model.number="age" >
+            <p>{{age}}</p>
+        </div>
+        <!-- trim -->
+        <div>
+          <input type="text" v-model.trim="msg">
+          <p>{{msg}}</p>
+        </div>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            age: "",
+            msg: '',
+            toggle: '',
+            a: 'a',
+            b: 'b',
+            message: '',
+            checked: false,
+            checkNames: [],
+            picked: "",
+            selected: "",
+            selected1: [],
+            selected3: "",
+            checked1: '',
+            picked1: '',
+            selecties: [
+                { value: "o", text: "请选择", option: 'disabled' },
+                { value: "A", text: "one" },
+                { value: "B", text: "two" },
+                { value: "C", text: "three" },
+                { value: "D", text: "four" },
+            ]
+        }
+    })
+    </script>
+</body>
+
+</html>
